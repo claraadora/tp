@@ -2,11 +2,9 @@ package seedu.address.logic;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.commands.meeting.Command;
@@ -23,7 +21,6 @@ import seedu.address.storage.meeting.StorageMeeting;
 public class LogicMeetingManager implements LogicMeeting {
 
     public static final String FILE_OPS_ERROR_MESSAGE = "Could not save data to meeting file: ";
-    private final Logger logger = LogsCenter.getLogger(LogicMeetingManager.class);
     private final ModelMeeting modelMeeting;
     private final StorageMeeting storageMeeting;
     private final MeetingBookParser meetingBookParser;
@@ -39,7 +36,6 @@ public class LogicMeetingManager implements LogicMeeting {
 
     @Override
     public CommandResult execute(String commandText) throws CommandException, ParseException {
-        logger.info("----------------[USER COMMAND][" + commandText + "]");
 
         CommandResult commandResult;
         Command command = meetingBookParser.parseCommand(commandText);

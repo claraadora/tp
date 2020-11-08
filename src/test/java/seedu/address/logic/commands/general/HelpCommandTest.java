@@ -1,7 +1,7 @@
-package seedu.address.logic.commands.mode;
+package seedu.address.logic.commands.general;
 
-import static seedu.address.logic.commands.mode.CommandTestUtil.assertCommandSuccess;
-import static seedu.address.logic.commands.mode.HelpCommand.SHOWING_HELP_MESSAGE;
+import static seedu.address.logic.commands.general.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.general.HelpCommand.SHOWING_HELP_MESSAGE;
 
 import org.junit.jupiter.api.Test;
 

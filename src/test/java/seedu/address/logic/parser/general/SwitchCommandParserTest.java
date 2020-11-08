@@ -1,13 +1,13 @@
-package seedu.address.logic.parser.mode;
+package seedu.address.logic.parser.general;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.mode.CommandParserTestUtil.assertParseFailure;
-import static seedu.address.logic.parser.mode.CommandParserTestUtil.assertParseSuccess;
+import static seedu.address.logic.parser.general.CommandParserTestUtil.assertParseFailure;
+import static seedu.address.logic.parser.general.CommandParserTestUtil.assertParseSuccess;
 
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.ModeEnum;
-import seedu.address.logic.commands.mode.SwitchCommand;
+import seedu.address.logic.commands.general.SwitchCommand;
 
 class SwitchCommandParserTest {
 

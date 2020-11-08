@@ -1,4 +1,4 @@
-// @@author torakiki-reused
+// @@author gabztcr-reused
 // Reused from https://github.com/torakiki/fx-progress-circle with minor modifications.
 
 /*

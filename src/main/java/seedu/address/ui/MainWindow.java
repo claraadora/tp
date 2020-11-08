@@ -1,7 +1,7 @@
 package seedu.address.ui;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.commands.mode.SwitchCommand.MESSAGE_SUCCESS;
+import static seedu.address.logic.commands.general.SwitchCommand.MESSAGE_SUCCESS;
 
 import java.util.logging.Logger;
 
@@ -15,8 +15,8 @@ import seedu.address.commons.ModeEnum;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.LogicDeliverable;
+import seedu.address.logic.LogicDispatcher;
 import seedu.address.logic.LogicMeeting;
-import seedu.address.logic.LogicMode;
 import seedu.address.logic.LogicPerson;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -36,7 +36,7 @@ public class MainWindow extends UiPart<Stage> {
 
     private Stage primaryStage;
     private ModeEnum mode;
-    private LogicMode logicMode;
+    private LogicDispatcher logicDispatcher;
     private LogicPerson logicPerson;
     private LogicDeliverable logicDeliverable;
     private LogicMeeting logicMeeting;
@@ -88,13 +88,13 @@ public class MainWindow extends UiPart<Stage> {
      * Creates a {@code MainWindow} with the given {@code Stage} {@code LogicMode},
      * {@code LogicPerson} and {@code LogicDeliverable}.
      */
-    public MainWindow(Stage primaryStage, LogicMode logicMode, LogicPerson logicPerson,
+    public MainWindow(Stage primaryStage, LogicDispatcher logicDispatcher, LogicPerson logicPerson,
                       LogicDeliverable logicDeliverable, LogicMeeting logicMeeting) {
         super(FXML, primaryStage);
 
         // Set dependencies
         this.primaryStage = primaryStage;
-        this.logicMode = logicMode;
+        this.logicDispatcher = logicDispatcher;
         this.logicPerson = logicPerson;
         this.logicDeliverable = logicDeliverable;
         this.logicMeeting = logicMeeting;
@@ -156,6 +156,7 @@ public class MainWindow extends UiPart<Stage> {
             rightPanelPlaceholder.getChildren().add(calendarListPanel.getRoot());
             leftPanelPlaceholder.getChildren().add(projectCompletionStatusPanel.getRoot());
             setUnderlineButton(dashboardButton);
+            projectCompletionStatusPanel.updateOcp();
             break;
         case PERSON:
             leftPanelPlaceholder.getChildren().add(personListPanel.getRoot());
@@ -319,27 +320,7 @@ public class MainWindow extends UiPart<Stage> {
      */
     private CommandResult executeCommand(String commandText) throws CommandException, ParseException {
         try {
-            CommandResult commandResult = null;
-            if (logicMode.isModeCommand(commandText) || mode == ModeEnum.DASHBOARD) {
-                commandResult = logicMode.execute(commandText);
-            } else {
-                switch (mode) {
-                case PERSON:
-                    commandResult = logicPerson.execute(commandText);
-                    break;
-                case DELIVERABLE:
-                    commandResult = logicDeliverable.execute(commandText);
-                    calendar.updateCalendarList();
-                    projectCompletionStatusPanel.updateOcp();
-                    break;
-                case MEETING:
-                    commandResult = logicMeeting.execute(commandText);
-                    calendar.updateCalendarList();
-                    break;
-                default:
-                    assert false : "from default: " + ModeEnum.getModeOptions();
-                }
-            }
+            CommandResult commandResult = logicDispatcher.execute(commandText, mode);
 
             requireNonNull(commandResult);
 
@@ -354,6 +335,8 @@ public class MainWindow extends UiPart<Stage> {
                 switchMode(commandResult.getMode());
             } else {
                 updateDetailsPanel();
+                calendar.updateCalendarList();
+                projectCompletionStatusPanel.updateOcp();
             }
 
             return commandResult;

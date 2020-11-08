@@ -1,8 +1,8 @@
-package seedu.address.logic.commands.mode;
+package seedu.address.logic.commands.general;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static seedu.address.logic.commands.mode.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.general.CommandTestUtil.assertCommandSuccess;
 
 import org.junit.jupiter.api.Test;
 

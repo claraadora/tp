@@ -1,0 +1,20 @@
+@startuml
+!include style.puml
+
+box UI UI_COLOR_T1
+participant ":MainWindow" as MainWindow UI_COLOR
+end box
+
+[-> MainWindow : switchDeliverable()
+activate MainWindow
+
+MainWindow -> MainWindow: switchMode(ModeEnum.DELIVERABLE)
+
+activate MainWindow
+MainWindow --> MainWindow
+
+deactivate MainWindow
+[<--MainWindow
+deactivate MainWindow
+
+@enduml

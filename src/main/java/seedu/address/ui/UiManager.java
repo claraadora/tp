@@ -11,8 +11,8 @@ import seedu.address.MainApp;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.LogicDeliverable;
+import seedu.address.logic.LogicDispatcher;
 import seedu.address.logic.LogicMeeting;
-import seedu.address.logic.LogicMode;
 import seedu.address.logic.LogicPerson;
 
 /**
@@ -25,7 +25,7 @@ public class UiManager implements Ui {
     private static final Logger logger = LogsCenter.getLogger(UiManager.class);
     private static final String ICON_APPLICATION = "/images/productiv_32.png";
 
-    private LogicMode logicMode;
+    private LogicDispatcher logicDispatcher;
     private LogicPerson logicPerson;
     private LogicDeliverable logicDeliverable;
     private LogicMeeting logicMeeting;
@@ -34,10 +34,10 @@ public class UiManager implements Ui {
     /**
      * Creates a {@code UiManager} with the given {@code Logic}.
      */
-    public UiManager(LogicMode logicMode, LogicPerson logicPerson,
+    public UiManager(LogicDispatcher logicDispatcher, LogicPerson logicPerson,
                      LogicDeliverable logicDeliverable, LogicMeeting logicMeeting) {
         super();
-        this.logicMode = logicMode;
+        this.logicDispatcher = logicDispatcher;
         this.logicPerson = logicPerson;
         this.logicDeliverable = logicDeliverable;
         this.logicMeeting = logicMeeting;
@@ -51,7 +51,7 @@ public class UiManager implements Ui {
         primaryStage.getIcons().add(getImage(ICON_APPLICATION));
 
         try {
-            mainWindow = new MainWindow(primaryStage, logicMode, logicPerson, logicDeliverable, logicMeeting);
+            mainWindow = new MainWindow(primaryStage, logicDispatcher, logicPerson, logicDeliverable, logicMeeting);
             mainWindow.show(); //This should be called before creating other UI parts
             mainWindow.fillInnerParts();
 

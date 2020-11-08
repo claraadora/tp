@@ -82,12 +82,6 @@ e.g. `switch c` will display your contacts.
 * `switch db` will display your project's completion status and your own schedule.
 * How the commands will be executed depend on which mode you are currently in, e.g. `delete 1` in meeting mode deletes the 1st meeting shown.
 
-<div markdown="block" class="alert alert-info">
-
-**:information_source: Note:** A warning message will be shown if you switch to the same mode that you are currently in.
-
-</div>
-
 Examples:
 * `switch db` switches to dashboard mode.
 * `switch m` switches to meeting mode.

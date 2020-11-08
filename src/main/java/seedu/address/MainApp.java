@@ -15,10 +15,10 @@ import seedu.address.commons.util.ConfigUtil;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.LogicDeliverable;
 import seedu.address.logic.LogicDeliverableManager;
+import seedu.address.logic.LogicDispatcher;
+import seedu.address.logic.LogicDispatcherManager;
 import seedu.address.logic.LogicMeeting;
 import seedu.address.logic.LogicMeetingManager;
-import seedu.address.logic.LogicMode;
-import seedu.address.logic.LogicModeManager;
 import seedu.address.logic.LogicPerson;
 import seedu.address.logic.LogicPersonManager;
 import seedu.address.model.ReadOnlyUserPrefs;
@@ -75,7 +75,7 @@ public class MainApp extends Application {
     protected StorageMeeting storageMeeting;
     protected ModelMeeting modelMeeting;
 
-    protected LogicMode logicMode;
+    protected LogicDispatcher logicDispatcher;
     protected Config config;
 
     @Override
@@ -107,9 +107,9 @@ public class MainApp extends Application {
         logicPerson = new LogicPersonManager(modelPerson, storagePerson);
         logicDeliverable = new LogicDeliverableManager(modelDeliverable, storageDeliverable);
         logicMeeting = new LogicMeetingManager(modelMeeting, storageMeeting);
-        logicMode = new LogicModeManager();
+        logicDispatcher = new LogicDispatcherManager(logicPerson, logicDeliverable, logicMeeting);
 
-        ui = new UiManager(logicMode, logicPerson, logicDeliverable, logicMeeting);
+        ui = new UiManager(logicDispatcher, logicPerson, logicDeliverable, logicMeeting);
 
     }
 

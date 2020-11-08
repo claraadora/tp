@@ -2,11 +2,9 @@ package seedu.address.logic;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.deliverable.Command;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -24,7 +22,6 @@ import seedu.address.storage.deliverable.StorageDeliverable;
 public class LogicDeliverableManager implements LogicDeliverable {
 
     public static final String FILE_OPS_ERROR_MESSAGE = "Could not save data to deliverable file: ";
-    private final Logger logger = LogsCenter.getLogger(LogicDeliverableManager.class);
     private final ModelDeliverable modelDeliverable;
     private final StorageDeliverable storageDeliverable;
     private final DeliverableBookParser deliverableBookParser;
@@ -41,7 +38,6 @@ public class LogicDeliverableManager implements LogicDeliverable {
 
     @Override
     public CommandResult execute(String commandText) throws CommandException, ParseException {
-        logger.info("----------------[USER COMMAND][" + commandText + "]");
 
         CommandResult commandResult;
         Command command = deliverableBookParser.parseCommand(commandText);

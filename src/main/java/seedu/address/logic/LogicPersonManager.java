@@ -2,11 +2,9 @@ package seedu.address.logic;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.commons.core.LogsCenter;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.commands.person.Command;
@@ -22,7 +20,6 @@ import seedu.address.storage.person.StoragePerson;
  */
 public class LogicPersonManager implements LogicPerson {
     public static final String FILE_OPS_ERROR_MESSAGE = "Could not save data to file: ";
-    private final Logger logger = LogsCenter.getLogger(LogicPersonManager.class);
 
     private final ModelPerson modelPerson;
     private final StoragePerson storagePerson;
@@ -39,7 +36,6 @@ public class LogicPersonManager implements LogicPerson {
 
     @Override
     public CommandResult execute(String commandText) throws CommandException, ParseException {
-        logger.info("----------------[USER COMMAND][" + commandText + "]");
 
         CommandResult commandResult;
         Command command = addressBookParser.parseCommand(commandText);

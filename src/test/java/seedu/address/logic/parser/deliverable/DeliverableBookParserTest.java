@@ -19,7 +19,7 @@ import seedu.address.logic.commands.deliverable.DeleteCommand;
 import seedu.address.logic.commands.deliverable.EditCommand;
 import seedu.address.logic.commands.deliverable.FindCommand;
 import seedu.address.logic.commands.deliverable.ListCommand;
-import seedu.address.logic.commands.mode.HelpCommand;
+import seedu.address.logic.commands.general.HelpCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.deliverable.deliverable.Deliverable;
 import seedu.address.model.deliverable.deliverable.TitleDescriptionContainsKeywordsPredicate;

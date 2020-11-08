@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 
+import seedu.address.logic.commands.general.HelpCommand;
 import seedu.address.logic.commands.meeting.AddCommand;
 import seedu.address.logic.commands.meeting.ClearCommand;
 import seedu.address.logic.commands.meeting.DeleteCommand;
@@ -20,7 +21,6 @@ import seedu.address.logic.commands.meeting.EditCommand;
 import seedu.address.logic.commands.meeting.EditCommand.EditMeetingDescriptor;
 import seedu.address.logic.commands.meeting.FindCommand;
 import seedu.address.logic.commands.meeting.ListCommand;
-import seedu.address.logic.commands.mode.HelpCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.meeting.meeting.Meeting;
 import seedu.address.model.meeting.meeting.TitleDescriptionContainsKeywordsPredicate;

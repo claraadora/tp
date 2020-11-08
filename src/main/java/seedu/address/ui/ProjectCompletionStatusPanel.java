@@ -1,5 +1,9 @@
 package seedu.address.ui;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -56,11 +60,54 @@ public class ProjectCompletionStatusPanel extends UiPart<Region> {
         numCompletedDeliverables = findNumCompletedDeliverables(deliverableList);
         overallCompletionPercentage = getOcp(totalNumDeliverables, numCompletedDeliverables);
 
+        // @@author gabztcr-reused
+        // Reused from https://www.youtube.com/watch?v=9SEE8UP17jo with minor modifications.
         RingProgressIndicator ringProgressIndicator = new RingProgressIndicator();
-        ringProgressIndicator.setProgress(overallCompletionPercentage);
         ocpDiagram.getChildren().add(ringProgressIndicator);
+        new WorkerThread(ringProgressIndicator, overallCompletionPercentage).start();
+        // @@author
 
         String caption = numCompletedDeliverables + " / " + totalNumDeliverables + " Deliverables Completed";
         ocpCaption.setText(caption);
     }
+
+    // @@author gabztcr-reused
+    // Reused from https://www.youtube.com/watch?v=9SEE8UP17jo with minor modifications.
+    public class WorkerThread extends Thread {
+        private RingProgressIndicator rpi;
+        private int progress = 0;
+        private int ocp;
+
+        /**
+         * Constructor class for the worker thread.
+         * @param rpi RingProgressIndicator object
+         * @param ocp Overall Completion Percentage for Product Development
+         */
+        public WorkerThread(RingProgressIndicator rpi, int ocp) {
+            this.rpi = rpi;
+            this.ocp = ocp;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                try {
+                    Thread.sleep(25);
+                } catch (InterruptedException e) {
+                    Logger.getLogger(ProjectCompletionStatusPanel.class.getName()).log(Level.SEVERE, null, e);
+                }
+
+                if (progress >= ocp) {
+                    break;
+                }
+
+                Platform.runLater(() -> {
+                    rpi.setProgress(progress);
+                });
+
+                progress++;
+            }
+        }
+    }
+    // @@author
 }
