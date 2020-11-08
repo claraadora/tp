@@ -1,12 +1,8 @@
 {
   "contacts": [ {
     "name": "Hans Muster",
-    "phone": {
-      "value": "9482424"
-    },
+    "phone": "9482424",
     "email": "invalid@email!3e",
-    "description": {
-      "value" : null
-    }
+    "description": null
   } ]
 }

@@ -1,23 +1,15 @@
 {
   "contacts": [ {
     "name": "Alice Pauline",
-    "phone": {
-      "value": "81234567"
-    },
+    "phone": "81234567",
     "email": "pauline@example.com",
     "role": "dev",
-    "description": {
-      "value" : "End user"
-    }
+    "description": "End user"
   }, {
     "name": "Alice Pauline",
-    "phone": {
-      "value": "94351253"
-    },
+    "phone": "94351253",
     "email": "pauline@example.com",
     "role": "stk",
-    "description": {
-      "value" : null
-    }
+    "description": null
   } ]
 }
