@@ -2,73 +2,45 @@
   "_comment": "AddressBook save file which contains the same Person values as in TypicalPersons#getTypicalAddressBook()",
   "contacts" : [ {
     "name" : "Alice Pauline",
-    "phone" : {
-      "value": "94351253"
-    },
+    "phone" : "94351253",
     "email" : "alice@example.com",
     "role": "stk",
-    "description": {
-      "value" : "End user"
-    }
+    "description": "End user"
   }, {
     "name" : "Benson Meier",
-    "phone" : {
-      "value": "98765432"
-    },
+    "phone" : "98765432",
     "email" : "johnd@example.com",
     "role": "dev",
-    "description": {
-      "value" : "Frontend engineer"
-    }
+    "description": "Frontend engineer"
   }, {
     "name" : "Carl Kurz",
-    "phone" : {
-      "value": "95352563"
-    },
+    "phone" : "95352563",
     "email" : "heinz@example.com",
     "role": "stk",
-    "description": {
-      "value" : "Business analyst"
-    }
+    "description": "Business analyst"
   }, {
     "name" : "Daniel Meier",
-    "phone" : {
-      "value": null
-    },
+    "phone" : null,
     "email" : "cornelia@example.com",
     "role": "dev",
-    "description": {
-      "value" : "Backend engineer"
-    }
+    "description": "Backend engineer"
   }, {
     "name" : "Elle Meyer",
-    "phone" : {
-      "value": null
-    },
+    "phone" : null,
     "email" : "werner@example.com",
     "role": "stk",
-    "description": {
-      "value" : null
-    }
+    "description": null
   }, {
     "name" : "Fiona Kunz",
-    "phone" : {
-      "value": "9482427"
-    },
+    "phone" : "9482427",
     "email" : "lydia@example.com",
     "role": "stk",
-    "description": {
-      "value" : "Product designer, Kurz work partner"
-    }
+    "description": "Product designer, Kurz work partner"
   }, {
     "name" : "George Best",
-    "phone" : {
-      "value": null
-    },
+    "phone" : null,
     "email" : "anna@example.com",
     "role": "stk",
-    "description": {
-      "value" : "Secondary user"
-    }
+    "description": "Secondary user"
   } ]
 }

@@ -1,12 +1,8 @@
 {
   "contacts": [ {
     "name": "Person with invalid name field: Ha!ns Mu@ster",
-    "phone": {
-      "value": "9482424"
-    },
+    "phone": "9482424",
     "email": "hans@example.com",
-    "description": {
-      "value" : null
-    }
+    "description": null
   } ]
 }

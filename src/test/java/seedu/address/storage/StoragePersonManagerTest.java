@@ -46,7 +46,8 @@ public class StoragePersonManagerTest {
         original.setGuiSettings(new GuiSettings(300, 600, 4, 6));
         storageManager.saveUserPrefs(original);
         UserPrefs retrieved = storageManager.readUserPrefs().get();
-        assertEquals(original, retrieved);
+        assertEquals(original.getAddressBookFilePath().toAbsolutePath(),
+                retrieved.getAddressBookFilePath().toAbsolutePath());
     }
 
     @Test

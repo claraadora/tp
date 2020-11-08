@@ -92,13 +92,22 @@ public class ConfigUtilTest {
         //Try writing when the file doesn't exist
         ConfigUtil.saveConfig(original, configFilePath);
         Config readBack = ConfigUtil.readConfig(configFilePath).get();
-        assertEquals(original, readBack);
-
+        assertEquals(original.getUserPrefsFilePath().toAbsolutePath(),
+                readBack.getUserPrefsFilePath().toAbsolutePath());
+        System.out.println(original);
+        System.out.println(readBack);
+        System.out.println(original.getUserPrefsFilePath().toAbsolutePath());
+        System.out.println(readBack.getUserPrefsFilePath().toAbsolutePath());
         //Try saving when the file exists
         original.setLogLevel(Level.FINE);
         ConfigUtil.saveConfig(original, configFilePath);
         readBack = ConfigUtil.readConfig(configFilePath).get();
-        assertEquals(original, readBack);
+        assertEquals(original.getUserPrefsFilePath().toAbsolutePath(),
+                readBack.getUserPrefsFilePath().toAbsolutePath());
+        System.out.println(original);
+        System.out.println(readBack);
+        System.out.println(original.getUserPrefsFilePath().toAbsolutePath());
+        System.out.println(readBack.getUserPrefsFilePath().toAbsolutePath());
     }
 
     private void save(Config config, String configFileInTestDataFolder) throws IOException {
@@ -108,8 +117,8 @@ public class ConfigUtilTest {
 
     private Path addToTestDataPathIfNotNull(String configFileInTestDataFolder) {
         return configFileInTestDataFolder != null
-                                  ? TEST_DATA_FOLDER.resolve(configFileInTestDataFolder)
-                                  : null;
+                ? TEST_DATA_FOLDER.resolve(configFileInTestDataFolder)
+                : null;
     }
 
 
