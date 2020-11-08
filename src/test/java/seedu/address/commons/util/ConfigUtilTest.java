@@ -92,7 +92,8 @@ public class ConfigUtilTest {
         //Try writing when the file doesn't exist
         ConfigUtil.saveConfig(original, configFilePath);
         Config readBack = ConfigUtil.readConfig(configFilePath).get();
-        assertEquals(original.getUserPrefsFilePath().toAbsolutePath(), readBack.getUserPrefsFilePath().toAbsolutePath());
+        assertEquals(original.getUserPrefsFilePath().toAbsolutePath(),
+                readBack.getUserPrefsFilePath().toAbsolutePath());
         System.out.println(original);
         System.out.println(readBack);
         System.out.println(original.getUserPrefsFilePath().toAbsolutePath());
@@ -101,7 +102,8 @@ public class ConfigUtilTest {
         original.setLogLevel(Level.FINE);
         ConfigUtil.saveConfig(original, configFilePath);
         readBack = ConfigUtil.readConfig(configFilePath).get();
-        assertEquals(original.getUserPrefsFilePath().toAbsolutePath(), readBack.getUserPrefsFilePath().toAbsolutePath());
+        assertEquals(original.getUserPrefsFilePath().toAbsolutePath(),
+                readBack.getUserPrefsFilePath().toAbsolutePath());
         System.out.println(original);
         System.out.println(readBack);
         System.out.println(original.getUserPrefsFilePath().toAbsolutePath());
