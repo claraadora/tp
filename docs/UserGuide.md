@@ -270,11 +270,11 @@ Format: `find KEYWORDS`
 * Searches only consider title and description.
 * Searches are case-insensitive, e.g. `homepage` will match `Homepage`.
 * Order of keywords does not matter, e.g. `Homepage Navigation` will match `Navigation Homepage`.
-* Searches only account for full words, e.g. `Deploy` will not match `Deployment`.
+* Searches only account for full words, e.g. `Deploy` will not match `Deployment` but `Stand-up` will match `Up button` and `Laptop stand`. 
 * Searches return deliverables matching at least one keyword, e.g. `Homepage Navigation` will return `Complete Homepage` and `Increase size of Navigation Bar`.
 
 Examples:
-* `find mock-ups urgent` returns a deliverable with title `Finish mock-ups` and another with description `This is urgent and important!`.
+* `find mock-up urgent` returns a deliverable with title `Finish mock-ups` and another with description `This is urgent and important!`.
 * `find plan` returns a deliverable with title `Finalise design and plan` and another with description `Reminder to plan time wisely.`.
 
 #### Listing all deliverables: `list`
@@ -569,11 +569,6 @@ Format: `clear`
 **Q**: Which operating systems can I run *Productiv* on?<br>
 **A**: Currently, *Productiv* is supported on both Windows and Mac. Just ensure
 that you have Java `11` installed on your computer and it is your default Java version.
-
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it 
-creates with the file that contains the data of your previous *Productiv* app.
-
 
 ---------------------------------------------------------------------------------------------------------------------
 
