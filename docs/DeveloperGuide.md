@@ -278,8 +278,6 @@ Given below is an activity diagram to show how the switch mode operation works f
 ![SwitchModeActivityDiagram](images/SwitchModeActivityDiagram.png)
 
 
-
-
 Via mouse input:
 There is no interaction with the logic component. The only steps are:
 1. The `MainWindow` detects that a button on the navigation bar is clicked, e.g. if Deliverable is clicked, `switchDeliverable` method of `MainWindow` is called.
