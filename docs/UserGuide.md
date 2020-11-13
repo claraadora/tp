@@ -282,7 +282,7 @@ The following figure shows how the deliverable mode appears in Productiv.
 <div markdown="block" class="alert alert-success">
 
 **:information_source: Note:** You must be in the deliverable mode to execute the following commands. 
-Refer to [switch](#311-switching-modes---switch-) for more information on switching modes.
+Refer to [switch](#511-switching-modes-switch) for more information on switching modes.
 
 </div>
 
@@ -414,7 +414,7 @@ Parameter      | Description                   | Example
 <div markdown="span" class="alert alert-primary">:bulb:
 
 **Tip:** Use the `list` command when you want to list all your deliverables back after using the `find` command.
-Refer to [Listing all deliverables](#337-listing-all-deliverables---list-) below for details of the `list` command.
+Refer to [Listing all deliverables](#537-listing-all-deliverables-list) below for details of the `list` command.
 </div>
 
 Examples:
@@ -474,7 +474,7 @@ The following figure shows how the meeting mode appears in Productiv.
 <div markdown="block" class="alert alert-success">
 
 **:information_source: Note:** You must be in the meeting mode to execute the following commands. 
-Refer to [switch](#311-switching-modes---switch-) for more information on switching modes.
+Refer to [switch](#511-switching-modes-switch) for more information on switching modes.
 
 </div>   
  
@@ -568,7 +568,7 @@ Parameter      | Description                   | Example
 <div markdown="span" class="alert alert-primary">:bulb:
 
 **Tip:** Use the `list` command when you want to list all your meetings back after using the `find` command.
-Refer to [Listing all meetings](#345-listing-all-meetings---list-) below for details of the `list` command.
+Refer to [Listing all meetings](#545-listing-all-meetings-list) below for details of the `list` command.
 </div>
 
 Examples:
@@ -628,7 +628,7 @@ The following figure shows how the contact mode appears in Productiv.
 <div markdown="block" class="alert alert-success">
 
 **:information_source: Note:** You must be in the contact mode to execute the following commands. 
-Refer to [switch](#311-switching-modes---switch-) for more information on switching modes.
+Refer to [switch](#511-switching-modes-switch) for more information on switching modes.
 
 </div> 
 
@@ -718,7 +718,7 @@ Parameter      | Description                   | Example
 <div markdown="span" class="alert alert-primary">:bulb:
 
 **Tip:** Use the `list` command when you want to list all your contacts back after using the `find` command.
-Refer to [Listing all contacts](#355-listing-all-contacts---list-) below for details of the `list` command.
+Refer to [Listing all contacts](#555-listing-all-contacts-list) below for details of the `list` command.
 </div>
 
 Examples:
